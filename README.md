@@ -1,2 +1,2 @@
 # Transaction-Tracker-Web
-A website for tracking daily transactions, developed using Angular.
+A website for tracking daily transactions, developed using React.
