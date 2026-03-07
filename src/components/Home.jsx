@@ -38,7 +38,7 @@ const Home = () => {
   ]
 
   return (
-    <div className='container' style={styles.container} ref={containerRef}>
+    <div className='container-fluid' style={styles.container} ref={containerRef}>
       <div style={styles.childContainer}>
 
         {menuOptions.map((opt, index) =>
