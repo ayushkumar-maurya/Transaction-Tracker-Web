@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 
 import Home from './Home'
-import Bank from './Menu/Bank'
+import Bank from './Bank'
 import bankComponents from '../groupedComponents/bankComponents'
-import Stock from './Menu/Stock'
+import Stock from './Stock'
 import stockComponents from '../groupedComponents/stockComponents'
 
 
