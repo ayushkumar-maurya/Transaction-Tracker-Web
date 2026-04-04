@@ -1,0 +1,7 @@
+:root {
+  --menu-item-hover-bg: #DDD;
+
+  --button-hover-bg: #0D2C57;
+  --button-danger-hover-bg: #BA1324EF;
+  --button-cancel-hover-bg: #4A535B;
+}
