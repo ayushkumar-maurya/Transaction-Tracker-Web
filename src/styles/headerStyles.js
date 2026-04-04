@@ -2,12 +2,12 @@ import colours from "../colours";
 
 const styles = {
   header: {
-    backgroundColor: colours.primaryBg,
+    backgroundColor: colours.headerBg,
     padding: 10
   },
   
   title: {
-    color: colours.primaryFg,
+    color: colours.headerFg,
     fontSize: 20,
     margin: 0,
     whiteSpace: 'nowrap',

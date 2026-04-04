@@ -6,12 +6,12 @@ const styles = {
     flexDirection: 'column',
     height: 150,
     width: 250,
-    backgroundColor: colours.itemBg,
+    backgroundColor: colours.menuItemBg,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
     margin: 10,
-    border: `1px solid ${colours.itemBorder}`,
+    border: `1px solid ${colours.menuItemBorder}`,
     borderRadius: 15,
     cursor: 'pointer'
   },
@@ -22,7 +22,7 @@ const styles = {
   },
 
   title: {
-    color: colours.itemFg,
+    color: colours.menuItemFg,
     fontSize: 20,
     marginTop: 10,
     marginBottom: 0,

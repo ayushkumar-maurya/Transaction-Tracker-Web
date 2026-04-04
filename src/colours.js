@@ -1,9 +1,15 @@
-export default {
-  primaryBg: '#1F4E79',
-  primaryFg: '#FFF',
+const common = {
+  colour1: '#1F4E79',
+  colour2: '#FFF'
+}
 
-  screenBg: '#FFF',
-  itemBg: '#EEE',
-  itemFg: '#1F4E79',
-  itemBorder: '#CCC'
+export default {
+  headerBg: common.colour1,
+  headerFg: common.colour2,
+
+  screenBg: common.colour2,
+
+  menuItemBg: '#EEE',
+  menuItemFg: common.colour1,
+  menuItemBorder: '#CCC',
 }
