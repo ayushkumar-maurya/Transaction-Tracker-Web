@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import styles from '../styles/menuStyles'
 import MenuItem from "./items/MenuItem"
 
-const Home = ({ menuItems }) => {
+const Menu = ({ menuItems }) => {
   const [nEmptyItemsToAdd, setNEmptyItemsToAdd] = useState(null)
   const containerRef = useRef(null)
 
@@ -51,4 +51,4 @@ const Home = ({ menuItems }) => {
   )
 }
 
-export default Home
+export default Menu
