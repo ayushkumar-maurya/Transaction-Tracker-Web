@@ -1,22 +1,16 @@
 import { Routes, Route } from 'react-router-dom'
-
-import Home from './Home'
-import Bank from './Bank'
-import bankComponents from '../groupedComponents/bankComponents'
-import Stock from './Stock'
-import stockComponents from '../groupedComponents/stockComponents'
-
+import Menu from './Menu'
+import menus from '../menus'
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path='/' element={<Home />} />
-
-      <Route path="/bank" element={<Bank />} />
-      <Route path="/bank/add-transaction" element={<bankComponents.AddTransaction />} />
-
-      <Route path="/stock" element={<Stock />} />
-      <Route path="/stock/add-transaction" element={<stockComponents.AddTransaction />} />
+      <Route path='/' element={<Menu menuItems={menus.home} />} />
+      <Route path='/bank' element={<Menu menuItems={menus.bank} />} />
+      <Route path='/creditcard' element={<Menu menuItems={menus.creditCard} />} />
+      <Route path='/stock' element={<Menu menuItems={menus.stock} />} />
+      <Route path='/mutualfund' element={<Menu menuItems={menus.mutualFund} />} />
+      <Route path='/misc' element={<Menu menuItems={menus.misc} />} />
     </Routes>
   )
 }

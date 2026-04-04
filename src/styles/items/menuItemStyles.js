@@ -1,7 +1,7 @@
-import colours from "../colours";
+import colours from "../../colours";
 
 const styles = {
-  option: {
+  item: {
     display: 'flex',
     flexDirection: 'column',
     height: 150,
