@@ -1,16 +1,38 @@
 import { Routes, Route } from 'react-router-dom'
-import Menu from './Menu'
 import menus from '../menus'
+import Menu from './Menu'
+import EditCategory from './EditCategory'
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path='/' element={<Menu menuItems={menus.home} />} />
-      <Route path='/bank' element={<Menu menuItems={menus.bank} />} />
-      <Route path='/creditcard' element={<Menu menuItems={menus.creditCard} />} />
-      <Route path='/stock' element={<Menu menuItems={menus.stock} />} />
-      <Route path='/mutualfund' element={<Menu menuItems={menus.mutualFund} />} />
-      <Route path='/misc' element={<Menu menuItems={menus.misc} />} />
+
+      <Route path='/bank'>
+        <Route index element={<Menu menuItems={menus.bank} />} />
+        <Route path='add' element={<EditCategory />} />
+      </Route>
+
+      <Route path='/creditcard'>
+        <Route index element={<Menu menuItems={menus.creditCard} />} />
+        <Route path='add' element={<EditCategory />} />
+      </Route>
+
+      <Route path='/stock'>
+        <Route index element={<Menu menuItems={menus.stock} />} />
+        <Route path='add' element={<EditCategory />} />
+      </Route>
+
+      <Route path='/mutualfund'>
+        <Route index element={<Menu menuItems={menus.mutualFund} />} />
+        <Route path='add' element={<EditCategory />} />
+      </Route>
+
+      <Route path='/misc'>
+        <Route index element={<Menu menuItems={menus.misc} />} />
+        <Route path='add' element={<EditCategory />} />
+      </Route>
+
     </Routes>
   )
 }
