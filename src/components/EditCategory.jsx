@@ -1,10 +1,7 @@
-import { useLocation } from 'react-router-dom'
 import styles from "../styles/editCategoryStyles"
 import '../css/EditCategory.css'
 
-const EditCategory = () => {
-  // const location = useLocation()
-  // const { method, path } = location.state
+const EditCategory = ({ method, path }) => {
   const category = null
   const activity = category ? 'UPDATE' : 'ADD'
   const capActivity = activity.charAt(0).toUpperCase() + activity.slice(1).toLowerCase()
@@ -26,7 +23,7 @@ const EditCategory = () => {
         <button type="button" className="btn danger-btn" style={{...styles.button, ...styles.deleteBtn}}>
           Delete
         </button>
-        
+
         <button type="button" className="btn cancel-btn" style={{...styles.button, ...styles.cancelBtn}}>
           Cancel
         </button>
