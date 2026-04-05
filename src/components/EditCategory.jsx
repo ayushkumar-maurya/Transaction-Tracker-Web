@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
-import { API_URL } from '../../config'
-import styles from "../styles/editCategoryStyles"
-import '../css/EditCategory.css'
+import { API_URL } from '../config'
+import styles from "../styles/components/editCategoryStyles"
+import '../css/components/EditCategory.css'
 import Alert from './Alert'
 
 const EditCategory = ({ method, path }) => {

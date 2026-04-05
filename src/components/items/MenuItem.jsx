@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import styles from '../../styles/items/menuItemStyles'
-import '../../css/items/MenuItem.css'
+import styles from '../../styles/components/items/menuItemStyles'
+import '../../css/components/items/MenuItem.css'
 
 const MenuItem = ({ item }) => {
   const { title, icon, navPath, navParams } = item

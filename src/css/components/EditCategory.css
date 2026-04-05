@@ -1,4 +1,4 @@
-@import "./colours.css";
+@import "../colours.css";
 
 @media (max-width: 600px) {
   .form-container {

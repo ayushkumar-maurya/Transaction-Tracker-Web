@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import styles from '../styles/menuStyles'
+import styles from '../styles/components/menuStyles'
 import MenuItem from "./items/MenuItem"
 
 const Menu = ({ menuItems }) => {

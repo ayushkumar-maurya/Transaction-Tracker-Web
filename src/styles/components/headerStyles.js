@@ -1,4 +1,4 @@
-import colours from "./colours";
+import colours from "../colours";
 
 const styles = {
   header: {

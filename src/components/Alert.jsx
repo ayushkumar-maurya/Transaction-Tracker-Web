@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import styles from '../styles/alertStyles'
+import styles from '../styles/components/alertStyles'
 
 const Alert = ({ data, show, updateFlag }) => {
   const containerRef = useRef(null)

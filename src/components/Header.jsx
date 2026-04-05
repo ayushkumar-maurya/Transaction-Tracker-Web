@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
-import styles from "../styles/headerStyles"
-import titles from "../titles";
+import styles from "../styles/components/headerStyles"
+import titles from "../data/titles";
 
 const Header = () => {
   const location = useLocation();
