@@ -9,6 +9,8 @@ export default {
 
   screenBg: common.colour2,
 
+  alertBg: '#00000080',
+
   menuItemBg: '#EEE',
   menuItemFg: common.colour1,
   menuItemBorder: '#CCC',

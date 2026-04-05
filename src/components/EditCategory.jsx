@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { API_URL } from '../../config'
 import styles from "../styles/editCategoryStyles"
 import '../css/EditCategory.css'
+import Alert from './Alert'
 
 const EditCategory = ({ method, path }) => {
   const navigate = useNavigate()
@@ -13,6 +14,9 @@ const EditCategory = ({ method, path }) => {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [disableBtn, setDisableBtn] = useState(false)
+
+  const [alertData, setAlertData] = useState({})
+  const [showAlert, setShowAlert] = useState(false)
 
   useEffect(() => {
     if(activity === 'UPDATE') {
@@ -66,15 +70,15 @@ const EditCategory = ({ method, path }) => {
         }
         else if(activity === 'UPDATE')
           navigate(-1)
-        // Alert.alert(capActivity, `${postData.name} ${activity === 'ADD' ? 'added' : 'updated'} successfully!`, [{ text: 'OK' }])
-        console.log(`${postData.name} ${activity === 'ADD' ? 'added' : 'updated'} successfully!`)
+        setAlertData({ title: capActivity, msg: `${postData.name} ${activity === 'ADD' ? 'added' : 'updated'} successfully!` })
+        setShowAlert(true)
       }
       else
         throw new Error('Some error occurred. Please try again!')
     }
     catch(err) {
-      // Alert.alert(capActivity, err.message, [{ text: 'OK' }])
-      console.log(err.message)
+      setAlertData({ title: capActivity, msg: err.message })
+      setShowAlert(true)
     }
     finally {
       setDisableBtn(false)
@@ -135,6 +139,7 @@ const EditCategory = ({ method, path }) => {
         </button> }
 
       </div>
+      <Alert data={alertData} show={showAlert} updateFlag={setShowAlert} />
     </div>
   )
 }
