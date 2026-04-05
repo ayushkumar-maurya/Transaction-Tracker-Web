@@ -1,0 +1,5 @@
+@import "../../colours.css";
+
+.item:hover {
+  background-color: var(--category-row-item-hover-bg) !important;
+}

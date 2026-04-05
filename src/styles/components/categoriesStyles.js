@@ -1,7 +1,7 @@
-import colours from "../colours"
-
 const styles = {
-  
+  itemsContainer: {
+    paddingBottom: 40
+  }
 }
 
 export default styles
