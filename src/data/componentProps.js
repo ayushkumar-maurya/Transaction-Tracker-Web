@@ -1,80 +1,95 @@
 const componentProps = {
   categories: {
     bank: {
-      pageTitle: 'Banks',
+      title: 'Banks',
       path: 'bank/banks',
-      updateInfo: {
-        method: 'PUT',
-        path: 'bank/bank'
-      },
-      deletePath: 'bank/bank'
+      updatePath: 'bank/update'
     },
 
     creditCard: {
-      pageTitle: 'Credit Cards',
+      title: 'Credit Cards',
       path: 'creditcard/creditcards',
-      updateInfo: {
-        method: 'PUT',
-        path: 'creditcard/creditcard'
-      },
-      deletePath: 'creditcard/creditcard'
+      updatePath: 'creditcard/update'
     },
 
     stock: {
-      pageTitle: 'Stocks',
+      title: 'Stocks',
       path: 'stock/stocks',
-      updateInfo: {
-        method: 'PUT',
-        path: 'stock/stock'
-      },
-      deletePath: 'stock/stock'
+      updatePath: 'stock/update'
     },
 
     mutualFund: {
-      pageTitle: 'Mutual Funds',
+      title: 'Mutual Funds',
       path: 'mutualfund/mutualfunds',
-      updateInfo: {
-        method: 'PUT',
-        path: 'mutualfund/mutualfund'
-      },
-      deletePath: 'mutualfund/mutualfund'
+      updatePath: 'mutualfund/update'
     },
 
     misc: {
-      pageTitle: 'Misc Categories',
+      title: 'Misc Categories',
       path: 'misc/misccategories',
-      updateInfo: {
-        method: 'PUT',
-        path: 'misc/misccategory'
-      },
-      deletePath: 'misc/misccategory'
+      updatePath: 'misc/update'
     }
   },
 
   editCategory: {
     bank: {
-      method: 'POST',
-      path: 'bank/bank'
+      add: {
+        method: 'POST',
+        path: 'bank/bank'
+      },
+      update: {
+        method: 'PUT',
+        path: 'bank/bank',
+        deletePath: 'bank/bank'
+      }
     },
 
     creditCard: {
-      method: 'POST',
-      path: 'creditcard/creditcard'
+      add: {
+        method: 'POST',
+        path: 'creditcard/creditcard'
+      },
+      update: {
+        method: 'PUT',
+        path: 'creditcard/creditcard',
+        deletePath: 'creditcard/creditcard'
+      }
     },
 
     stock: {
-      method: 'POST',
-      path: 'stock/stock'
+      add: {
+        method: 'POST',
+        path: 'stock/stock'
+      },
+      update: {
+        method: 'PUT',
+        path: 'stock/stock',
+        deletePath: 'stock/stock'
+      }
     },
 
     mutualFund: {
-      method: 'POST',
-      path: 'mutualfund/mutualfund'
+      add: {
+        method: 'POST',
+        path: 'mutualfund/mutualfund'
+      },
+      update: {
+        method: 'PUT',
+        path: 'mutualfund/mutualfund',
+        deletePath: 'mutualfund/mutualfund'
+      }
     },
 
     misc: {
-      method: 'POST',
-      path: 'misc/misccategory'
+      add: {
+        method: 'POST',
+        path: 'misc/misccategory'
+      },
+      update: {
+        method: 'PUT',
+        path: 'misc/misccategory',
+        deletePath: 'misc/misccategory'
+      }
     }
   }
 }

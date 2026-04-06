@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { useNavigate } from "react-router-dom"
+import { useState, useRef, useEffect } from 'react'
+import { useNavigate, useLocation } from "react-router-dom"
 import { API_URL } from '../config'
 import styles from "../styles/components/editCategoryStyles"
 import '../css/components/EditCategory.css'
@@ -7,7 +7,8 @@ import Alert from './Alert'
 
 const EditCategory = ({ method, path }) => {
   const navigate = useNavigate()
-  const category = null
+  const location = useLocation()  
+  const category = location.state && location.state.category
   const activity = category ? 'UPDATE' : 'ADD'
   const capActivity = activity.charAt(0).toUpperCase() + activity.slice(1).toLowerCase()
 
@@ -15,7 +16,7 @@ const EditCategory = ({ method, path }) => {
   const [description, setDescription] = useState('')
   const [disableBtn, setDisableBtn] = useState(false)
 
-  const [alertData, setAlertData] = useState({})
+  const alertRef = useRef(null)
   const [showAlert, setShowAlert] = useState(false)
 
   useEffect(() => {
@@ -64,20 +65,26 @@ const EditCategory = ({ method, path }) => {
       }
 
       if(categoryEdited) {
+        let onAlertClose = null
         if(activity === 'ADD') {
           setName('')
           setDescription('')
         }
         else if(activity === 'UPDATE')
-          navigate(-1)
-        setAlertData({ title: capActivity, msg: `${postData.name} ${activity === 'ADD' ? 'added' : 'updated'} successfully!` })
+          onAlertClose = () => navigate(-1)
+
+        alertRef.current = {
+          title: capActivity,
+          msg: `${postData.name} ${activity === 'ADD' ? 'added' : 'updated'} successfully!`,
+          onClose: onAlertClose
+        }
         setShowAlert(true)
       }
       else
         throw new Error('Some error occurred. Please try again!')
     }
     catch(err) {
-      setAlertData({ title: capActivity, msg: err.message })
+      alertRef.current = { title: capActivity, msg: err.message }
       setShowAlert(true)
     }
     finally {
@@ -134,12 +141,13 @@ const EditCategory = ({ method, path }) => {
           type="button"
           className="btn cancel-btn"
           style={{...styles.button, ...styles.cancelBtn}}
+          onClick={() => navigate(-1)}
         >
           Cancel
         </button> }
 
       </div>
-      <Alert data={alertData} show={showAlert} updateFlag={setShowAlert} />
+      <Alert infoRef={alertRef} showFlag={showAlert} updateShowFlag={setShowAlert} />
     </div>
   )
 }

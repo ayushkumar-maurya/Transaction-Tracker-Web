@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { API_URL } from '../config'
 import styles from "../styles/components/categoriesStyles"
 import Alert from './Alert'
@@ -6,11 +6,11 @@ import Spinner from './Spinner'
 import CategoryRowItem from './items/CategoryRowItem'
 import '../css/components/Categories.css'
 
-const Categories = ({ pageTitle, path, updateInfo, deletePath }) => {
+const Categories = ({ title, path, updatePath }) => {
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)
 
-  const [alertData, setAlertData] = useState({})
+  const alertRef = useRef(null)
   const [showAlert, setShowAlert] = useState(false)
 
   const getCategories = async () => {
@@ -30,7 +30,7 @@ const Categories = ({ pageTitle, path, updateInfo, deletePath }) => {
       setCategories(resData)
     }
     catch(err) {
-      setAlertData({ title: pageTitle, msg: err.message })
+      alertRef.current = { title: title, msg: err.message }
       setShowAlert(true)
     }
   }
@@ -44,10 +44,10 @@ const Categories = ({ pageTitle, path, updateInfo, deletePath }) => {
       { loading && <Spinner /> }
       <div className="items-container" style={styles.itemsContainer}>
         {categories.map((item, index) =>
-          <CategoryRowItem category={item} index={index} updateInfo={updateInfo} key={index} />
+          <CategoryRowItem category={item} index={index} key={index} updatePath={updatePath} />
         )}
       </div>
-      <Alert data={alertData} show={showAlert} updateFlag={setShowAlert} />
+      <Alert infoRef={alertRef} showFlag={showAlert} updateShowFlag={setShowAlert} />
     </>
   )
 }

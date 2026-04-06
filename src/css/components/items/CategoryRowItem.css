@@ -1,5 +1,3 @@
-@import "../../colours.css";
-
-.item:hover {
+.cr-item:hover {
   background-color: var(--category-row-item-hover-bg) !important;
 }
