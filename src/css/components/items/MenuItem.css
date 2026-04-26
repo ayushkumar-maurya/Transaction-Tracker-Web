@@ -1,0 +1,3 @@
+.m-item:hover {
+  background-color: var(--menu-item-hover-bg) !important;
+}

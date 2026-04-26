@@ -1,0 +1,33 @@
+const common = {
+  colour1: '#1F4E79',
+  colour2: '#FFF'
+}
+
+export default {
+  headerBg: common.colour1,
+  headerFg: common.colour2,
+
+  screenBg: common.colour2,
+
+  alertBg: '#00000080',
+
+  menuItemBg: '#EEE',
+  menuItemFg: common.colour1,
+  menuItemBorder: '#CCC',
+
+  spinnerBg: '#FFFFFF00',
+  spinner: common.colour1,
+
+  listItemBg: common.colour2,
+  listItemTitle: common.colour1,
+  listItemDesc: '#777',
+
+  inputLabel: common.colour1,
+  
+  textInput: common.colour1,
+
+  buttonBg: common.colour1,
+  buttonFg: common.colour2,
+  buttonDanger: '#DC3546EF',
+  buttonCancel: '#6C757D'
+}

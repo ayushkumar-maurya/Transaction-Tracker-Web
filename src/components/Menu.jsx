@@ -1,9 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
-import styles from '../styles/stockStyles'
-import MenuItem from "./Utility/MenuItem"
+import styles from '../styles/components/menuStyles'
+import MenuItem from "./items/MenuItem"
 
-const Stock = () => {
-  const iconDirPath = '/stock/'
+const Menu = ({ menuItems }) => {
   const [nEmptyItemsToAdd, setNEmptyItemsToAdd] = useState(null)
   const containerRef = useRef(null)
 
@@ -13,7 +12,7 @@ const Stock = () => {
       // 20 is the container padding.
       // 250 + 20 is the item's width + margin.
       let nItemsInRow = Math.trunc((containerWidth - 20) / (250 + 20))
-      let nItemsInLastRow = menuOptions.length % nItemsInRow
+      let nItemsInLastRow = menuItems.length % nItemsInRow
       if(nItemsInLastRow === 0)
         nItemsInLastRow = nItemsInRow
       return nItemsInRow - nItemsInLastRow
@@ -32,19 +31,13 @@ const Stock = () => {
     }
   }, [])
 
-  const menuOptions = [
-  { path: '/stock/add-transaction', iconPath: `${iconDirPath}add-transaction.png`, title: 'Add Transaction' }
-  ]
-
   return (
     <div className='container-fluid' style={styles.container} ref={containerRef}>
       <div style={styles.childContainer}>
 
-        {menuOptions.map((opt, index) =>
+        {menuItems.map((item, index) =>
           <MenuItem
-            path={opt.path}
-            iconPath={opt.iconPath}
-            title={opt.title}
+            item={item}
             key={index}
           />
         )}
@@ -58,4 +51,4 @@ const Stock = () => {
   )
 }
 
-export default Stock
+export default Menu
