@@ -5,7 +5,7 @@ import styles from "../styles/components/editCategoryStyles"
 import '../css/components/EditCategory.css'
 import Alert from './Alert'
 
-const EditCategory = ({ method, path }) => {
+const EditCategory = ({ method, path, deletePath }) => {
   const navigate = useNavigate()
   const location = useLocation()  
   const category = location.state && location.state.category
@@ -92,6 +92,51 @@ const EditCategory = ({ method, path }) => {
     }
   }
 
+  const sendDeleteRequest = async () => {
+    setDisableBtn(true)
+    const postData = { id: category.id }
+
+    try {
+      let categoryDeleted = false
+
+      const url = `${API_URL}${deletePath}`;
+      let params = {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(postData)
+      }
+
+      const res = await fetch(url, params)
+      if(res) {
+        let resData = await res.json()
+        if(resData) {
+          if(resData.affectedRows)
+            categoryDeleted = true
+          else if(resData.error)
+            throw new Error(resData.error)
+        }
+      }
+
+      if(categoryDeleted) {
+        alertRef.current = {
+          title: 'Delete',
+          msg: `${category.name} deleted successfully!`,
+          onClose: () => navigate(-1)
+        }
+        setShowAlert(true)
+      }
+      else
+        throw new Error('Some error occurred. Please try again!')
+    }
+    catch(err) {
+      alertRef.current = { title: 'Delete', msg: err.message }
+      setShowAlert(true)
+    }
+    finally {
+      setDisableBtn(false)
+    }
+  }
+
   return (
     <div className="form-container" style={styles.formContainer}>
       <label htmlFor="name" className="form-label" style={styles.label}>Name</label>
@@ -133,6 +178,8 @@ const EditCategory = ({ method, path }) => {
           type="button"
           className="btn danger-btn"
           style={{...styles.button, ...styles.deleteBtn}}
+          disabled={disableBtn}
+          onClick={sendDeleteRequest}
         >
           Delete
         </button> }
