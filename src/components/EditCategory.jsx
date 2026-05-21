@@ -22,7 +22,7 @@ const EditCategory = ({ method, path }) => {
   useEffect(() => {
     if(activity === 'UPDATE') {
       setName(category.name)
-      setDescription(category.description)
+      setDescription(category.description ? category.description : '')
     }
   }, [])
 
