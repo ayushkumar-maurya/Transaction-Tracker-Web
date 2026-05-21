@@ -1,4 +1,66 @@
 const componentProps = {
+  editTransaction: {
+    bank: {
+      add: {
+        method: 'POST',
+        path: 'bank/transaction'
+      },
+      update: {
+        method: 'PUT',
+        path: 'bank/transaction',
+        deletePath: 'bank/transaction'
+      }
+    },
+
+    creditCard: {
+      add: {
+        method: 'POST',
+        path: 'creditcard/transaction'
+      },
+      update: {
+        method: 'PUT',
+        path: 'creditcard/transaction',
+        deletePath: 'creditcard/transaction'
+      }
+    },
+
+    stock: {
+      add: {
+        method: 'POST',
+        path: 'stock/transaction'
+      },
+      update: {
+        method: 'PUT',
+        path: 'stock/transaction',
+        deletePath: 'stock/transaction'
+      }
+    },
+
+    mutualFund: {
+      add: {
+        method: 'POST',
+        path: 'mutualfund/transaction'
+      },
+      update: {
+        method: 'PUT',
+        path: 'mutualfund/transaction',
+        deletePath: 'mutualfund/transaction'
+      }
+    },
+
+    misc: {
+      add: {
+        method: 'POST',
+        path: 'misc/transaction'
+      },
+      update: {
+        method: 'PUT',
+        path: 'misc/transaction',
+        deletePath: 'misc/transaction'
+      }
+    }
+  },
+
   categories: {
     bank: {
       title: 'Banks',
