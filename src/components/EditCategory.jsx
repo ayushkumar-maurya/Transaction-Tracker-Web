@@ -7,17 +7,19 @@ import Alert from './Alert'
 
 const EditCategory = ({ method, path, deletePath }) => {
   const navigate = useNavigate()
-  const location = useLocation()  
+  const location = useLocation()
+
   const category = location.state && location.state.category
   const activity = category ? 'UPDATE' : 'ADD'
   const capActivity = activity.charAt(0).toUpperCase() + activity.slice(1).toLowerCase()
 
-  const [name, setName] = useState('')
-  const [description, setDescription] = useState('')
-  const [disableBtn, setDisableBtn] = useState(false)
-
   const alertRef = useRef(null)
   const [showAlert, setShowAlert] = useState(false)
+
+  const [disableBtn, setDisableBtn] = useState(false)
+
+  const [name, setName] = useState('')
+  const [description, setDescription] = useState('')
 
   useEffect(() => {
     if(activity === 'UPDATE') {
