@@ -31,6 +31,11 @@ const menus = {
 
   bank: [
     {
+      title: 'Add Transaction',
+      icon: `${assetsPath}bank/add-transaction.png`,
+      navPath: 'bank/transaction/add'
+    },
+    {
       title: 'Banks',
       icon: `${assetsPath}bank/banks.png`,
       navPath: 'bank/banks'
@@ -43,6 +48,11 @@ const menus = {
   ],
 
   creditCard: [
+    {
+      title: 'Add Transaction',
+      icon: `${assetsPath}credit-card/add-transaction.png`,
+      navPath: 'creditcard/transaction/add'
+    },
     {
       title: 'Credit Cards',
       icon: `${assetsPath}credit-card/credit-cards.png`,
@@ -57,6 +67,11 @@ const menus = {
 
   stock: [
     {
+      title: 'Add Transaction',
+      icon: `${assetsPath}stock/add-transaction.png`,
+      navPath: 'stock/transaction/add'
+    },
+    {
       title: 'Stocks',
       icon: `${assetsPath}stock/stocks.png`,
       navPath: 'stock/stocks'
@@ -70,6 +85,11 @@ const menus = {
 
   mutualFund: [
     {
+      title: 'Add Transaction',
+      icon: `${assetsPath}mutual-fund/add-transaction.png`,
+      navPath: 'mutualfund/transaction/add'
+    },
+    {
       title: 'Mutual Funds',
       icon: `${assetsPath}mutual-fund/mutual-funds.png`,
       navPath: 'mutualfund/mutualfunds'
@@ -82,6 +102,11 @@ const menus = {
   ],
 
   misc: [
+    {
+      title: 'Add Transaction',
+      icon: `${assetsPath}misc/add-transaction.png`,
+      navPath: 'misc/transaction/add'
+    },
     {
       title: 'Misc Categories',
       icon: `${assetsPath}misc/misc-categories.png`,
