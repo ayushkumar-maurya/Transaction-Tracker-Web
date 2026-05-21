@@ -8,8 +8,10 @@ const Alert = ({ infoRef, showFlag, updateShowFlag }) => {
   useEffect(() => {
     const afterHiding = () => {
       updateShowFlag(false)
-      if(infoRef.current.onClose)
+      if(infoRef.current.onClose) {
         infoRef.current.onClose()
+        infoRef.current.onClose = null
+      }
     }
 
     toastRef.current.addEventListener('hidden.bs.toast', afterHiding)
