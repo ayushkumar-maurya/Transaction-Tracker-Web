@@ -3,60 +3,70 @@ const componentProps = {
     bank: {
       add: {
         method: 'POST',
-        path: 'bank/transaction'
+        path: 'bank/transaction',
+        categoriesInfo: { parent: 'Bank', path: 'bank/banks' }
       },
       update: {
         method: 'PUT',
         path: 'bank/transaction',
-        deletePath: 'bank/transaction'
+        deletePath: 'bank/transaction',
+        categoriesInfo: { parent: 'Bank', path: 'bank/banks' }
       }
     },
 
     creditCard: {
       add: {
         method: 'POST',
-        path: 'creditcard/transaction'
+        path: 'creditcard/transaction',
+        categoriesInfo: { parent: 'Credit Card', path: 'creditcard/creditcards' }
       },
       update: {
         method: 'PUT',
         path: 'creditcard/transaction',
-        deletePath: 'creditcard/transaction'
+        deletePath: 'creditcard/transaction',
+        categoriesInfo: { parent: 'Credit Card', path: 'creditcard/creditcards' }
       }
     },
 
     stock: {
       add: {
         method: 'POST',
-        path: 'stock/transaction'
+        path: 'stock/transaction',
+        categoriesInfo: { parent: 'Stock', path: 'stock/stocks' }
       },
       update: {
         method: 'PUT',
         path: 'stock/transaction',
-        deletePath: 'stock/transaction'
+        deletePath: 'stock/transaction',
+        categoriesInfo: { parent: 'Stock', path: 'stock/stocks' }
       }
     },
 
     mutualFund: {
       add: {
         method: 'POST',
-        path: 'mutualfund/transaction'
+        path: 'mutualfund/transaction',
+        categoriesInfo: { parent: 'Mutual Fund', path: 'mutualfund/mutualfunds' }
       },
       update: {
         method: 'PUT',
         path: 'mutualfund/transaction',
-        deletePath: 'mutualfund/transaction'
+        deletePath: 'mutualfund/transaction',
+        categoriesInfo: { parent: 'Mutual Fund', path: 'mutualfund/mutualfunds' }
       }
     },
 
     misc: {
       add: {
         method: 'POST',
-        path: 'misc/transaction'
+        path: 'misc/transaction',
+        categoriesInfo: { parent: 'Misc Category', path: 'misc/misccategories' }
       },
       update: {
         method: 'PUT',
         path: 'misc/transaction',
-        deletePath: 'misc/transaction'
+        deletePath: 'misc/transaction',
+        categoriesInfo: { parent: 'Misc Category', path: 'misc/misccategories' }
       }
     }
   },
