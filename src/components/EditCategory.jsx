@@ -194,8 +194,8 @@ const EditCategory = ({ method, path, deletePath }) => {
         >
           Cancel
         </button> }
-
       </div>
+
       <Alert infoRef={alertRef} showFlag={showAlert} updateShowFlag={setShowAlert} />
     </div>
   )

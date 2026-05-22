@@ -14,6 +14,15 @@ const styles = {
     marginBottom: 15,
     color: colours.textInput
   },
+  textarea: {
+    resize: 'none'
+  },
+  deposit: {
+    color: colours.depositFg
+  },
+  withdrawal: {
+    color: colours.withdrawalFg
+  },
   dropdown: {
     marginBottom: 15,
     color: colours.dropdownFg

@@ -16,6 +16,10 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
 
   const [categoryId, setCategoryId] = useState('0')
   const [date, setDate] = useState(formatDate(new Date()))
+  const [description, setDescription] = useState('')
+  const [deposit, setDeposit] = useState('')
+  const [withdrawal, setWithdrawal] = useState('')
+  const [remark, setRemark] = useState('')
 
   const updateCategoryItems = categories => {
     if(categories.length > 0) {
@@ -80,6 +84,54 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
           style={styles.input}
           value={date}
           onChange={e => setDate(e.target.value)}
+        />
+
+        <label htmlFor="desc" className="form-label" style={styles.label}>Description</label>
+
+        <textarea
+          className="form-control"
+          id="desc"
+          rows="3"
+          placeholder="Description"
+          style={{...styles.input, ...styles.textarea}}
+          value={description}
+          onChange={e => setDescription(e.target.value)}
+        />
+
+        <label htmlFor="deposit" className="form-label" style={styles.label}>Deposit</label>
+
+        <input
+          type="number"
+          className="form-control"
+          id="deposit"
+          placeholder="Deposit"
+          style={{...styles.input, ...styles.deposit}}
+          value={deposit}
+          onChange={e => setDeposit(e.target.value)}
+        />
+
+        <label htmlFor="withdrawal" className="form-label" style={styles.label}>Withdrawal</label>
+
+        <input
+          type="number"
+          className="form-control"
+          id="withdrawal"
+          placeholder="Withdrawal"
+          style={{...styles.input, ...styles.withdrawal}}
+          value={withdrawal}
+          onChange={e => setWithdrawal(e.target.value)}
+        />
+
+        <label htmlFor="remark" className="form-label" style={styles.label}>Remark</label>
+
+        <textarea
+          className="form-control"
+          id="remark"
+          rows="3"
+          placeholder="Remark"
+          style={{...styles.input, ...styles.textarea}}
+          value={remark}
+          onChange={e => setRemark(e.target.value)}
         />
 
         <Alert infoRef={alertRef} showFlag={showAlert} updateShowFlag={setShowAlert} />
