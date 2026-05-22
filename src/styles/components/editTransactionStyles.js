@@ -10,6 +10,10 @@ const styles = {
     margin: 0,
     color: colours.inputLabel
   },
+  input: {
+    marginBottom: 15,
+    color: colours.textInput
+  },
   dropdown: {
     marginBottom: 15,
     color: colours.dropdownFg

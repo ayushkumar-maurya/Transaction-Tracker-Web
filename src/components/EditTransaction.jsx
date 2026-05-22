@@ -4,6 +4,7 @@ import styles from "../styles/components/editTransactionStyles"
 import '../css/components/EditTransaction.css'
 import Alert from './Alert'
 import Spinner from './Spinner'
+import { formatDate } from '../utils/date'
 
 const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) => {
   const [loading, setLoading] = useState(true)
@@ -14,6 +15,7 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
   const [categoryItems, setCategoryItems] = useState([{ label: 'No data found!', value: '0' }])
 
   const [categoryId, setCategoryId] = useState('0')
+  const [date, setDate] = useState(formatDate(new Date()))
 
   const updateCategoryItems = categories => {
     if(categories.length > 0) {
@@ -68,6 +70,17 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
         >
           { categoryItems.map(c => <option value={c.value} key={c.value}>{c.label}</option>) }
         </select>
+
+        <label htmlFor="date" className="form-label" style={styles.label}>Date</label>
+
+        <input
+          type="date"
+          className="form-control"
+          id="date"
+          style={styles.input}
+          value={date}
+          onChange={e => setDate(e.target.value)}
+        />
 
         <Alert infoRef={alertRef} showFlag={showAlert} updateShowFlag={setShowAlert} />
       </div>
