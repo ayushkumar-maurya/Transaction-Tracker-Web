@@ -13,11 +13,13 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
 
   const [categoryItems, setCategoryItems] = useState([{ label: 'No data found!', value: '0' }])
 
+  const [categoryId, setCategoryId] = useState('0')
+
   const updateCategoryItems = categories => {
     if(categories.length > 0) {
-      setCategoryItems(categories.map(c => {
+      setCategoryItems([{label: `Select ${categoriesInfo.parent}`, value: '0'}, ...categories.map(c => {
         return { label: c.name.length > 20 ? `${c.name.substring(0, 20)}...` : c.name, value: `${c.id}` }
-      }))
+      })])
     }
     else
       setCategoryItems([{ label: 'No data found!', value: '0' }])
@@ -35,7 +37,7 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
       if(!res)
         throw new Error('Unable to fetch required data!')
       let resData = await res.json()
-      if(!(resData && Array.isArray(resData)))
+      if(!(resData && Array.isArray(resData) && resData.length > 0))
         throw new Error('Unable to fetch required data!')
       updateCategoryItems(resData)
     }
@@ -54,6 +56,18 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
       { loading && <Spinner /> }
 
       <div className="form-container" style={styles.formContainer}>
+        <label htmlFor="category" className="form-label" style={styles.label}>{ categoriesInfo.parent }</label>
+
+        <select
+          id="category"
+          className="form-select"
+          aria-label={`Select ${categoriesInfo.parent}`}
+          value={categoryId}
+          onChange={e => setCategoryId(e.target.value)}
+        >
+          { categoryItems.map(c => <option value={c.value} key={c.value}>{c.label}</option>) }
+        </select>
+
         <Alert infoRef={alertRef} showFlag={showAlert} updateShowFlag={setShowAlert} />
       </div>
     </>
