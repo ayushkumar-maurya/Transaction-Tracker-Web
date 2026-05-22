@@ -2,11 +2,13 @@ const componentProps = {
   editTransaction: {
     bank: {
       add: {
+        title: 'Add Transaction',
         method: 'POST',
         path: 'bank/transaction',
         categoriesInfo: { parent: 'Bank', path: 'bank/banks' }
       },
       update: {
+        title: 'Update Transaction',
         method: 'PUT',
         path: 'bank/transaction',
         deletePath: 'bank/transaction',
@@ -16,11 +18,13 @@ const componentProps = {
 
     creditCard: {
       add: {
+        title: 'Add Transaction',
         method: 'POST',
         path: 'creditcard/transaction',
         categoriesInfo: { parent: 'Credit Card', path: 'creditcard/creditcards' }
       },
       update: {
+        title: 'Update Transaction',
         method: 'PUT',
         path: 'creditcard/transaction',
         deletePath: 'creditcard/transaction',
@@ -30,11 +34,13 @@ const componentProps = {
 
     stock: {
       add: {
+        title: 'Add Transaction',
         method: 'POST',
         path: 'stock/transaction',
         categoriesInfo: { parent: 'Stock', path: 'stock/stocks' }
       },
       update: {
+        title: 'Update Transaction',
         method: 'PUT',
         path: 'stock/transaction',
         deletePath: 'stock/transaction',
@@ -44,11 +50,13 @@ const componentProps = {
 
     mutualFund: {
       add: {
+        title: 'Add Transaction',
         method: 'POST',
         path: 'mutualfund/transaction',
         categoriesInfo: { parent: 'Mutual Fund', path: 'mutualfund/mutualfunds' }
       },
       update: {
+        title: 'Update Transaction',
         method: 'PUT',
         path: 'mutualfund/transaction',
         deletePath: 'mutualfund/transaction',
@@ -58,11 +66,13 @@ const componentProps = {
 
     misc: {
       add: {
+        title: 'Add Transaction',
         method: 'POST',
         path: 'misc/transaction',
         categoriesInfo: { parent: 'Misc Category', path: 'misc/misccategories' }
       },
       update: {
+        title: 'Update Transaction',
         method: 'PUT',
         path: 'misc/transaction',
         deletePath: 'misc/transaction',
