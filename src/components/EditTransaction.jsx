@@ -61,6 +61,7 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
         <select
           id="category"
           className="form-select"
+          style={styles.dropdown}
           aria-label={`Select ${categoriesInfo.parent}`}
           value={categoryId}
           onChange={e => setCategoryId(e.target.value)}

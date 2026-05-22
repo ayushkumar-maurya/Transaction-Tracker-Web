@@ -10,6 +10,10 @@ const styles = {
     margin: 0,
     color: colours.inputLabel
   },
+  dropdown: {
+    marginBottom: 15,
+    color: colours.dropdownFg
+  }
 }
 
 export default styles

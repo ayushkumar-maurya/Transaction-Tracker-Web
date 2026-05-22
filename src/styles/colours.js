@@ -26,6 +26,8 @@ export default {
   
   textInput: common.colour1,
 
+  dropdownFg: common.colour1,
+
   buttonBg: common.colour1,
   buttonFg: common.colour2,
   buttonDanger: '#DC3546EF',
