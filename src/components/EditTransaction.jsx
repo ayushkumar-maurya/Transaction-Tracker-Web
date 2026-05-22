@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { useNavigate } from "react-router-dom"
 import { API_URL } from '../config'
 import styles from "../styles/components/editTransactionStyles"
 import '../css/components/EditTransaction.css'
@@ -7,10 +8,16 @@ import Spinner from './Spinner'
 import { formatDate } from '../utils/date'
 
 const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) => {
-  const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
+
+  const activity = 'ADD'
+  const capActivity = activity.charAt(0).toUpperCase() + activity.slice(1).toLowerCase()
 
   const alertRef = useRef(null)
   const [showAlert, setShowAlert] = useState(false)
+
+  const [loading, setLoading] = useState(true)
+  const [disableBtn, setDisableBtn] = useState(false)
 
   const [categoryItems, setCategoryItems] = useState([{ label: 'No data found!', value: '0' }])
 
@@ -56,6 +63,14 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
   useEffect(() => {
     getCategories()
   }, [])
+
+  const sendEditRequest = async () => {
+
+  }
+
+  const sendDeleteRequest = async () => {
+
+  }
 
   return (
     <>
@@ -133,6 +148,37 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
           value={remark}
           onChange={e => setRemark(e.target.value)}
         />
+
+        <div style={styles.btnContainer}>
+          <button
+            type="button"
+            className="btn edit-btn"
+            style={{...styles.button, ...styles.editBtn}}
+            disabled={disableBtn}
+            onClick={sendEditRequest}
+          >
+            { capActivity }
+          </button>
+
+          { activity === 'UPDATE' && <button
+            type="button"
+            className="btn danger-btn"
+            style={{...styles.button, ...styles.deleteBtn}}
+            disabled={disableBtn}
+            onClick={sendDeleteRequest}
+          >
+            Delete
+          </button> }
+
+          { activity === 'UPDATE' && <button
+            type="button"
+            className="btn cancel-btn"
+            style={{...styles.button, ...styles.cancelBtn}}
+            onClick={() => navigate(-1)}
+          >
+            Cancel
+          </button> }
+        </div>
 
         <Alert infoRef={alertRef} showFlag={showAlert} updateShowFlag={setShowAlert} />
       </div>

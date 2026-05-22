@@ -12,3 +12,15 @@
     margin: auto;
   }
 }
+
+.edit-btn:hover {
+  background-color: var(--button-hover-bg) !important;
+}
+
+.danger-btn:hover {
+  background-color: var(--button-danger-hover-bg) !important;
+}
+
+.cancel-btn:hover {
+  background-color: var(--button-cancel-hover-bg) !important;
+}

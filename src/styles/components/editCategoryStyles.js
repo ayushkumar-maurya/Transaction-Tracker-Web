@@ -37,7 +37,7 @@ const styles = {
   },
   cancelBtn: {
     backgroundColor: colours.buttonCancel
-  },
+  }
 }
 
 export default styles

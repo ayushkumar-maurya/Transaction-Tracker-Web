@@ -26,6 +26,27 @@ const styles = {
   dropdown: {
     marginBottom: 15,
     color: colours.dropdownFg
+  },
+  btnContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 15
+  },
+  button: {
+    marginLeft: 15,
+    marginRight: 15,
+    color: colours.buttonFg,
+    border: 'none'
+  },
+  editBtn: {
+    backgroundColor: colours.buttonBg
+  },
+  deleteBtn: {
+    backgroundColor: colours.buttonDanger
+  },
+  cancelBtn: {
+    backgroundColor: colours.buttonCancel
   }
 }
 
