@@ -65,7 +65,83 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
   }, [])
 
   const sendEditRequest = async () => {
+    setDisableBtn(true)
 
+    const postData = {
+      categoryId,
+      date,
+      description,
+      deposit: Number(deposit),
+      withdrawal: Number(withdrawal),
+      remark
+    }
+  
+    try {
+      if(!postData.categoryId || postData.categoryId === '0')
+        throw new Error('Please select the Category ID!')
+
+      if(postData.date != null && !(/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(postData.date)))
+        throw new Error('Please enter the date in correct format!')
+
+      if(postData.description)
+        postData.description = postData.description.trim()
+
+      if(!postData.deposit && !postData.withdrawal)
+        throw new Error('Please enter either deposit or withdrawal amount!')
+
+      if(postData.remark)
+        postData.remark = postData.remark.trim()
+
+      let transactionEdited = false
+
+      const url = `${API_URL}${path}`;
+      let params = {
+        method,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(postData)
+      }
+
+      const res = await fetch(url, params)
+      if(res) {
+        let resData = await res.json()
+        if(resData) {
+          if((activity === 'ADD' && resData.insertedId) || (activity === 'UPDATE' && resData.affectedRows))
+            transactionEdited = true
+          else if(resData.error)
+            throw new Error(resData.error)
+        }
+      }
+
+      if(transactionEdited) {
+        let onAlertClose = null
+        if(activity === 'ADD') {
+          setCategoryId('0')
+          setDate(formatDate(new Date()))
+          setDescription('')
+          setDeposit('')
+          setWithdrawal('')
+          setRemark('')
+        }
+        else if(activity === 'UPDATE')
+          onAlertClose = () => navigate(-1)
+
+        alertRef.current = {
+          title: capActivity,
+          msg: `Transaction ${activity === 'ADD' ? 'added' : 'updated'} successfully!`,
+          onClose: onAlertClose
+        }
+        setShowAlert(true)
+      }
+      else
+        throw new Error('Some error occurred. Please try again!')
+    }
+    catch(err) {
+      alertRef.current = { title: capActivity, msg: err.message }
+      setShowAlert(true)
+    }
+    finally {
+      setDisableBtn(false)
+    }
   }
 
   const sendDeleteRequest = async () => {
