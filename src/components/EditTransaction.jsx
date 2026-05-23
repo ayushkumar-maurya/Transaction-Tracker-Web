@@ -159,7 +159,48 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
   }
 
   const sendDeleteRequest = async () => {
+    setDisableBtn(true)
+    const postData = { id: transaction.id }
 
+    try {
+      let transactionDeleted = false
+
+      const url = `${API_URL}${deletePath}`;
+      let params = {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(postData)
+      }
+
+      const res = await fetch(url, params)
+      if(res) {
+        let resData = await res.json()
+        if(resData) {
+          if(resData.affectedRows)
+            transactionDeleted = true
+          else if(resData.error)
+            throw new Error(resData.error)
+        }
+      }
+
+      if(transactionDeleted) {
+        alertRef.current = {
+          title: 'Delete',
+          msg: `Transaction deleted successfully!`,
+          onClose: () => navigate(-1)
+        }
+        setShowAlert(true)
+      }
+      else
+        throw new Error('Some error occurred. Please try again!')
+    }
+    catch(err) {
+      alertRef.current = { title: 'Delete', msg: err.message }
+      setShowAlert(true)
+    }
+    finally {
+      setDisableBtn(false)
+    }
   }
 
   return (
