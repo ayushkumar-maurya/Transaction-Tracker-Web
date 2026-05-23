@@ -64,6 +64,12 @@ const styles = {
     fontWeight: 'bold',
     marginBottom: 0
   },
+  deposit: {
+    color: colours.depositFg
+  },
+  withdrawal: {
+    color: colours.withdrawalFg
+  },
 
   line: {
     margin: 0
