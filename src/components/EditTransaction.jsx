@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import { API_URL } from '../config'
 import styles from "../styles/components/editTransactionStyles"
 import '../css/components/EditTransaction.css'
@@ -9,8 +9,10 @@ import { formatDate } from '../utils/date'
 
 const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) => {
   const navigate = useNavigate()
+  const location = useLocation()
 
-  const activity = 'ADD'
+  const transaction = location.state && location.state.transaction
+  const activity = transaction ? 'UPDATE' : 'ADD'
   const capActivity = activity.charAt(0).toUpperCase() + activity.slice(1).toLowerCase()
 
   const alertRef = useRef(null)
@@ -62,6 +64,15 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
 
   useEffect(() => {
     getCategories()
+
+    if(activity === 'UPDATE') {
+      setCategoryId(String(transaction.category_id))
+      setDate(transaction.date)
+      setDescription(transaction.description ? transaction.description : '')
+      setDeposit(transaction.deposit ? transaction.deposit : '')
+      setWithdrawal(transaction.withdrawal ? transaction.withdrawal : '')
+      setRemark(transaction.remark ? transaction.remark : '')
+    }
   }, [])
 
   const sendEditRequest = async () => {
@@ -75,7 +86,10 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
       withdrawal: Number(withdrawal),
       remark
     }
-  
+
+    if(activity === 'UPDATE')
+      postData.id = transaction.id
+
     try {
       if(!postData.categoryId || postData.categoryId === '0')
         throw new Error('Please select the Category ID!')
