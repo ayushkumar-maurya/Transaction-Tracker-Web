@@ -19,8 +19,8 @@ export default {
   spinner: common.colour1,
 
   listItemBg: common.colour2,
-  listItemTitle: common.colour1,
-  listItemDesc: '#777',
+  listItemContent1: common.colour1,
+  listItemContent2: '#777',
 
   inputLabel: common.colour1,
   

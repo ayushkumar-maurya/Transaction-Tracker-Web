@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import { API_URL } from '../config'
-import styles from "../styles/components/TransactionsStyles"
+import styles from "../styles/components/transactionsStyles"
 import Alert from './Alert'
 import Spinner from './Spinner'
+import TransactionRowItem from './items/TransactionRowItem'
 import '../css/components/Transactions.css'
 
 const Transactions = ({ title, path, updatePath }) => {
@@ -43,7 +44,7 @@ const Transactions = ({ title, path, updatePath }) => {
       { loading && <Spinner /> }
       <div className="items-container" style={styles.itemsContainer}>
         {transactions.map((item, index) =>
-          <p key={index}>{ item.category_name }</p>
+          <TransactionRowItem transaction={item} index={index} key={index} updatePath={updatePath} />
         )}
       </div>
       <Alert infoRef={alertRef} showFlag={showAlert} updateShowFlag={setShowAlert} />
