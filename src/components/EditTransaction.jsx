@@ -92,7 +92,7 @@ const EditTransaction = ({ title, method, path, deletePath, categoriesInfo }) =>
 
     try {
       if(!postData.categoryId || postData.categoryId === '0')
-        throw new Error('Please select the Category ID!')
+        throw new Error(`Please select the ${categoriesInfo.parent}!`)
 
       if(postData.date != null && !(/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(postData.date)))
         throw new Error('Please enter the date in correct format!')
