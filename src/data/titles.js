@@ -6,26 +6,31 @@ const titles = {
   'misc': 'Misc',
 
   'bank/transaction/add': 'Add Transaction',
+  'bank/transaction/transactions': 'Transactions',
   'bank/banks': 'Banks',
   'bank/update': 'Update Bank',
   'bank/add': 'Add Bank',
 
   'creditcard/transaction/add': 'Add Transaction',
+  'creditcard/transaction/transactions': 'Transactions',
   'creditcard/creditcards': 'Credit Cards',
   'creditcard/update': 'Update Credit Card',
   'creditcard/add': 'Add Credit Card',
 
   'stock/transaction/add': 'Add Transaction',
+  'stock/transaction/transactions': 'Transactions',
   'stock/stocks': 'Stocks',
   'stock/update': 'Update Stock',
   'stock/add': 'Add Stock',
 
   'mutualfund/transaction/add': 'Add Transaction',
+  'mutualfund/transaction/transactions': 'Transactions',
   'mutualfund/mutualfunds': 'Mutual Funds',
   'mutualfund/update': 'Update Mutual Fund',
   'mutualfund/add': 'Add Mutual Fund',
 
   'misc/transaction/add': 'Add Transaction',
+  'misc/transaction/transactions': 'Transactions',
   'misc/misccategories': 'Misc Categories',
   'misc/update': 'Update Misc Category',
   'misc/add': 'Add Misc Category'

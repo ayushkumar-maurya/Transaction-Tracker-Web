@@ -81,6 +81,38 @@ const componentProps = {
     }
   },
 
+  transactions: {
+    bank: {
+      title: 'Transactions',
+      path: 'bank/transactions',
+      updatePath: 'bank/transaction/update'
+    },
+
+    creditCard: {
+      title: 'Transactions',
+      path: 'creditcard/transactions',
+      updatePath: 'creditcard/transaction/update'
+    },
+
+    stock: {
+      title: 'Transactions',
+      path: 'stock/transactions',
+      updatePath: 'stock/transaction/update'
+    },
+
+    mutualFund: {
+      title: 'Transactions',
+      path: 'mutualfund/transactions',
+      updatePath: 'mutualfund/transaction/update'
+    },
+
+    misc: {
+      title: 'Transactions',
+      path: 'misc/transactions',
+      updatePath: 'misc/transaction/update'
+    }
+  },
+
   categories: {
     bank: {
       title: 'Banks',

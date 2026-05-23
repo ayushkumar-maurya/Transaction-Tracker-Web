@@ -2,12 +2,13 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import Menu from './Menu'
 import menus from '../data/menus'
 import EditTransaction from './EditTransaction'
+import Transactions from './Transactions'
 import Categories from './Categories'
 import EditCategory from './EditCategory'
 import componentProps from '../data/componentProps'
 
 const AppRoutes = () => {
-  const { editTransaction, categories, editCategory } = componentProps
+  const { editTransaction, transactions, categories, editCategory } = componentProps
 
   return (
     <Routes>
@@ -19,6 +20,7 @@ const AppRoutes = () => {
         <Route path='transaction'>
           <Route index element={<Navigate to='/bank/transaction/add' />} />
           <Route path='add' element={<EditTransaction {...editTransaction.bank.add} />} />
+          <Route path='transactions' element={<Transactions {...transactions.bank} />} />
         </Route>
 
         <Route path='banks' element={<Categories {...categories.bank} />} />
@@ -32,6 +34,7 @@ const AppRoutes = () => {
         <Route path='transaction'>
           <Route index element={<Navigate to='/creditcard/transaction/add' />} />
           <Route path='add' element={<EditTransaction {...editTransaction.creditCard.add} />} />
+          <Route path='transactions' element={<Transactions {...transactions.creditCard} />} />
         </Route>
 
         <Route path='creditcards' element={<Categories {...categories.creditCard} />} />
@@ -45,6 +48,7 @@ const AppRoutes = () => {
         <Route path='transaction'>
           <Route index element={<Navigate to='/stock/transaction/add' />} />
           <Route path='add' element={<EditTransaction {...editTransaction.stock.add} />} />
+          <Route path='transactions' element={<Transactions {...transactions.stock} />} />
         </Route>
 
         <Route path='stocks' element={<Categories {...categories.stock} />} />
@@ -58,6 +62,7 @@ const AppRoutes = () => {
         <Route path='transaction'>
           <Route index element={<Navigate to='/mutualfund/transaction/add' />} />
           <Route path='add' element={<EditTransaction {...editTransaction.mutualFund.add} />} />
+          <Route path='transactions' element={<Transactions {...transactions.mutualFund} />} />
         </Route>
 
         <Route path='mutualfunds' element={<Categories {...categories.mutualFund} />} />
@@ -71,6 +76,7 @@ const AppRoutes = () => {
         <Route path='transaction'>
           <Route index element={<Navigate to='/misc/transaction/add' />} />
           <Route path='add' element={<EditTransaction {...editTransaction.misc.add} />} />
+          <Route path='transactions' element={<Transactions {...transactions.misc} />} />
         </Route>
 
         <Route path='misccategories' element={<Categories {...categories.misc} />} />
