@@ -43,7 +43,7 @@ const menus = {
     {
       title: 'Banks',
       icon: `${assetsPath}bank/banks.png`,
-      navPath: 'bank/banks'
+      navPath: 'bank/amounts'
     },
     {
       title: 'Add Bank',
@@ -66,7 +66,7 @@ const menus = {
     {
       title: 'Credit Cards',
       icon: `${assetsPath}credit-card/credit-cards.png`,
-      navPath: 'creditcard/creditcards'
+      navPath: 'creditcard/amounts'
     },
     {
       title: 'Add Credit Card',
@@ -89,7 +89,7 @@ const menus = {
     {
       title: 'Stocks',
       icon: `${assetsPath}stock/stocks.png`,
-      navPath: 'stock/stocks'
+      navPath: 'stock/amounts'
     },
     {
       title: 'Add Stock',
@@ -112,7 +112,7 @@ const menus = {
     {
       title: 'Mutual Funds',
       icon: `${assetsPath}mutual-fund/mutual-funds.png`,
-      navPath: 'mutualfund/mutualfunds'
+      navPath: 'mutualfund/amounts'
     },
     {
       title: 'Add Mutual Fund',
@@ -135,7 +135,7 @@ const menus = {
     {
       title: 'Misc Categories',
       icon: `${assetsPath}misc/misc-categories.png`,
-      navPath: 'misc/misccategories'
+      navPath: 'misc/amounts'
     },
     {
       title: 'Add Misc Category',
