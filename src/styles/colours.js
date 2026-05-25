@@ -19,12 +19,19 @@ export default {
   spinner: common.colour1,
 
   listItemBg: common.colour2,
-  listItemTitle: common.colour1,
-  listItemDesc: '#777',
+  listItemContent1: common.colour1,
+  listItemContent2: '#777',
 
   inputLabel: common.colour1,
   
   textInput: common.colour1,
+
+  dropdownFg: common.colour1,
+
+  depositFg: '#00B050',
+  withdrawalFg: common.colour1,
+  positiveAmtFg: common.colour1,
+  negativeAmtFg: '#DC3546EF',
 
   buttonBg: common.colour1,
   buttonFg: common.colour2,

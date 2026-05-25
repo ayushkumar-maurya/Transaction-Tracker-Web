@@ -1,7 +1,7 @@
 :root {
   --menu-item-hover-bg: #DDD;
 
-  --category-row-item-hover-bg: #EEE;
+  --row-item-hover-bg: #EEE;
 
   --button-hover-bg: #0D2C57;
   --button-danger-hover-bg: #BA1324EF;

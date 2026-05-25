@@ -17,6 +17,16 @@ const styles = {
   textarea: {
     resize: 'none'
   },
+  deposit: {
+    color: colours.depositFg
+  },
+  withdrawal: {
+    color: colours.withdrawalFg
+  },
+  dropdown: {
+    marginBottom: 15,
+    color: colours.dropdownFg
+  },
   btnContainer: {
     display: 'flex',
     flexDirection: 'row',

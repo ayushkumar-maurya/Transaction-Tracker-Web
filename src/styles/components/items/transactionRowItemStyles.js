@@ -12,7 +12,21 @@ const styles = {
     flexShrink: 1,
     minWidth: 0
   },
-  name: {
+  infoSecionContainer: {
+    display: 'flex'
+  },
+  date: {
+    flexGrow: 0,
+    flexShrink: 0,
+    paddingRight: 10,
+    color: colours.listItemContent1,
+    fontWeight: 'bold',
+    marginBottom: 0
+  },
+  category: {
+    flexGrow: 1,
+    flexShrink: 1,
+    minWidth: 0,
     color: colours.listItemContent1,
     fontWeight: 'bold',
     marginBottom: 0,
@@ -22,8 +36,16 @@ const styles = {
   },
   desc: {
     color: colours.listItemContent2,
-    fontSize: '0.85rem',
+    fontWeight: 'bold',
     marginBottom: 0,
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
+  },
+  remark: {
+    color: colours.listItemContent2,
+    marginBottom: 0,
+    fontSize: '0.85rem',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis'
@@ -37,15 +59,16 @@ const styles = {
     flexShrink: 0
   },
   amt: {
+    color: colours.listItemContent1,
     fontSize: '1.1rem',
     fontWeight: 'bold',
     marginBottom: 0
   },
-  positiveAmt: {
-    color: colours.positiveAmtFg
+  deposit: {
+    color: colours.depositFg
   },
-  negativeAmt: {
-    color: colours.negativeAmtFg
+  withdrawal: {
+    color: colours.withdrawalFg
   },
 
   line: {
