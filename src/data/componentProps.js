@@ -116,31 +116,31 @@ const componentProps = {
   categories: {
     bank: {
       title: 'Banks',
-      path: 'bank/banks',
+      path: 'bank/amounts',
       updatePath: 'bank/update'
     },
 
     creditCard: {
       title: 'Credit Cards',
-      path: 'creditcard/creditcards',
+      path: 'creditcard/amounts',
       updatePath: 'creditcard/update'
     },
 
     stock: {
       title: 'Stocks',
-      path: 'stock/stocks',
+      path: 'stock/amounts',
       updatePath: 'stock/update'
     },
 
     mutualFund: {
       title: 'Mutual Funds',
-      path: 'mutualfund/mutualfunds',
+      path: 'mutualfund/amounts',
       updatePath: 'mutualfund/update'
     },
 
     misc: {
       title: 'Misc Categories',
-      path: 'misc/misccategories',
+      path: 'misc/amounts',
       updatePath: 'misc/update'
     }
   },
